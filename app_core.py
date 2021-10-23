@@ -10,8 +10,16 @@ import configparser
 app = Flask(__name__)
 
 # LINE 聊天機器人的基本資料
-line_bot_api = LineBotApi('97S2rQqI1uYIPevGC+5zZI4NcjgtWme3UODvdpcdPXb8pOpCz/HI9L4NdM77XgzIMcLGY3kKc8N5bDNsu8zzBuNfnfxgzIMf6pX7AdGZY6ar5N9EXFWV33HBff2wfYXVRKxkWsIGIKo0suAempn3AQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('309d6ce4414288e8840108d261d77df2')
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+line_bot_api = LineBotApi(config.get('showminglinebot01', 'channel_access_token'))
+handler = WebhookHandler(config.get('showminglinebot01', 'channel_secret'))
+
+
+# LINE 聊天機器人的基本資料
+#line_bot_api = LineBotApi('97S2rQqI1uYIPevGC+5zZI4NcjgtWme3UODvdpcdPXb8pOpCz/HI9L4NdM77XgzIMcLGY3kKc8N5bDNsu8zzBuNfnfxgzIMf6pX7AdGZY6ar5N9EXFWV33HBff2wfYXVRKxkWsIGIKo0suAempn3AQdB04t89/1O/w1cDnyilFU=')
+#handler = WebhookHandler('309d6ce4414288e8840108d261d77df2')
 
 # 接收 LINE 的資訊
 @app.route("/callback", methods=['POST'])
