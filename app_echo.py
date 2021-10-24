@@ -13,7 +13,7 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-line_bot_api = LineBotApi(config.get('showminglinebot01t', 'channel_access_token'))
+line_bot_api = LineBotApi(config.get('showminglinebot01', 'channel_access_token'))
 handler = WebhookHandler(config.get('showminglinebot01', 'channel_secret'))
 
 
