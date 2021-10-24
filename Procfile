@@ -1,1 +1,1 @@
-web: gunicorn app_google_isch:app --preload
+web: gunicorn app_pixabay:app --preload
