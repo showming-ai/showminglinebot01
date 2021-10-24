@@ -13,8 +13,8 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-line_bot_api = LineBotApi(config.get('line-bot', 'channel_access_token'))
-handler = WebhookHandler(config.get('line-bot', 'channel_secret'))
+line_bot_api = LineBotApi(config.get('showminglinebot01t', 'channel_access_token'))
+handler = WebhookHandler(config.get('showminglinebot01', 'channel_secret'))
 
 
 # 接收 LINE 的資訊
