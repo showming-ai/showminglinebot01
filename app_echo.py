@@ -26,7 +26,7 @@ def callback():
     app.logger.info("Request body: " + body)
     
     # 我加了下面那一行
-    print(body)
+    #print(body)
     # 我加了上面那一行
 
     try:
